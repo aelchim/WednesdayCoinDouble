@@ -41,10 +41,10 @@ contract WednesdayDouble is Ownable, Destructible {
         
         if (wednesdayCoin.transferFrom(from, this, value)) {
             if (difficulty < random(100)) {
-                wednesdayCoin.transfer(msg.sender, (value * 2));
+                wednesdayCoin.transfer(from, (value * 2));
             } else {
                 //send back 1
-                wednesdayCoin.transfer(msg.sender, 1000000000000000000);
+                wednesdayCoin.transfer(from, 1000000000000000000);
             }
         }
     }
